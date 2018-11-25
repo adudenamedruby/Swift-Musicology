@@ -1,6 +1,4 @@
 # Swift Musicology
-===
-
 A library for music theory, written in swift.
 
 
