@@ -19,12 +19,16 @@ Usage
 
 It should be noted that all data types conform to `Codable`, `CustomStringConvertable` protocols.  Furthermore, `Pitch`, and `Accidental` structs are `RawPresentable` with `Int` as well as `ExpressibleByIntegerLiteral` in order for them to be directly expressed with `Int`s.
 
+#### `Interval`
+
+- Intervals are the semitones between pitches and thus the basic building blocks of music. They are `IntegerLiteral` and you can add or subsctract them between themselves, `Pitches` or `NoteType`s. You can define a custom interval with its quality, degree and semitone properties. Finally Minor, major, perfect, augmented and diminished intervals, up to 2 octaves, are predefined for convenience.
+
 #### `Pitch` and `Key`
 
 - All keys can be defined with `Key` struct.  It has a `KeyType` where you can set the base key like C, D, A#, or Fb. All  keys must be initialised with an  `Accidental`  which can be `.natural`, `.flat`, `sharp` or something more custom such as`.sharps(amount: 3)`.
 - `Pitch`es are created with with a `Key` and octave. You may also create `Pitch`es with MIDI note number.  `rawValue` of a pitch is its MIDI note number.
 - The `Pitch`, `Key`, `Accidental` structs have had custom operators defined for equatable, `+` and `-` in order to make calulations easier.
-- Finally, these structs can be defined with strings as well, though, for specificity's sake, it is advisable to not do so.
+- Finally, these both of these structs can be defined with strings as well, though, for specificity's sake, it is advisable to not do so.
 
 ``` swift
 let gFlat = Key(type: g, accidental: .flat)
@@ -32,13 +36,6 @@ let a4 = Pitch(key: Key(type: .a), octave: 4)
 let dSharp: Key = "d#" // Is the equivalent of `Key(type: .a, accidental: .sharp)`
 let aFlat3: Pitch = "ab3" // or "a♭3" or "Ab3" is Pitch(key: (type: .a, accidental: .flat), octave: 3)
 ```
-
-#### `Interval`
-
-- Intervals are the semitones between pitches.
-- They are `IntegerLiteral` and you can add or subsctract them between themselves, `Pitches` or `NoteType`s.
-- You can define a custom interval with its quality, degree and semitone properties.
-- Minor, major, perfect, augmented and diminished intervals, up to 2 octaves, are predefined for convenience.
 
 #### `ScaleType` and `Scale`
 
