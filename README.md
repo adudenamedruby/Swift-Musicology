@@ -1,5 +1,5 @@
 # Swift Musicology
-A library for music theory, written in swift.
+A library for music theory, written in SWIFT.
 
 
 Requirements
@@ -15,32 +15,35 @@ Create the framework and then drag and drop to your app. Make sure to add it to 
 Usage
 ----
 
-`SwiftMusicology` will give you access to a few fairly simple enums and structs which can be used to define nearly any music related data. For most people, the most commonly used of these will be the  `Pitch`, `Key`, `Scale` and `Chord` enums.
+`SwiftMusicology` will give you access to several fairly simple enums and structs which can be used to define nearly any music related data that is based on Westen tonal relationships. For most people, the most commonly used of these data structures will be the  `Pitch`, `Key`, `Scale` and `Chord` structs.
 
-It should be noted that all data types conform to `Codable`, `CustomStringConvertable` protocols.  Furthermore, `Pitch`, and `Accidental` structs are `RawPresentable` with `Int` as well as `ExpressibleByIntegerLiteral` in order for them to be directly expressed with `Int`s.
+It should be noted that all data types conform to `Codable`and `CustomStringConvertable` protocols.  Furthermore, `Pitch`, and `Accidental` structs are `RawPresentable` with `Int`, as well as `ExpressibleByIntegerLiteral`.
 
 #### `Interval`
 
-- Intervals are the semitones between pitches and thus the basic building blocks of music. They are `IntegerLiteral` and you can add or subsctract them between themselves, `Pitches` or `NoteType`s. You can define a custom interval with its quality, degree and semitone properties. Finally Minor, major, perfect, augmented and diminished intervals, up to 2 octaves, are predefined for convenience.
+- Intervals are the semitones between pitches and thus the basic building blocks of Western music theory. They are `IntegerLiteral` so you can add or subsctract them between themselves, `Pitches` or `NoteType`s. You can define a custom interval with its quality, degree and semitone properties. Finally minor, major, perfect, augmented and diminished intervals, up to 2 octaves, are predefined for convenience.
 
 #### `Pitch` and `Key`
 
 - All keys can be defined with `Key` struct.  It has a `KeyType` where you can set the base key like C, D, A#, or Fb. All  keys must be initialised with an  `Accidental`  which can be `.natural`, `.flat`, `sharp` or something more custom such as`.sharps(amount: 3)`.
-- `Pitch`es are created with with a `Key` and octave. You may also create `Pitch`es with MIDI note number.  `rawValue` of a pitch is its MIDI note number.
+- `Pitch`es are created with with a `Key` and octave. You may also create `Pitch`es with MIDI note number. The `rawValue` of a pitch is its MIDI note number. In theory these are from 0-127; however, they are not limited and thus may go beyond this range in both directions.
 - The `Pitch`, `Key`, `Accidental` structs have had custom operators defined for `==`, `+` and `-` in order to make calulations easier.
-- Finally, these both of these structs can be defined with strings as well, though, for specificity's sake, it is advisable to not do so.
+- Both of these structs can be defined with strings as well, though, for specificity's sake, it is advisable to not do so.
 
 ``` swift
+// Standard method of definition
 let gFlat = Key(type: g, accidental: .flat)
 let a4 = Pitch(key: Key(type: .a), octave: 4)
+
+// Definition with strings.
 let dSharp: Key = "d#" // Is the equivalent of `Key(type: .a, accidental: .sharp)`
 let aFlat3: Pitch = "ab3" // or "a♭3" or "Ab3" is Pitch(key: (type: .a, accidental: .flat), octave: 3)
 ```
 
 #### `ScaleType` and `Scale`
 
-- `ScaleType` enum exists as a covenient shortcut providing a substantial amount of predefined scales from standard Major/Minor to more exotic scales such as Promethean Neopolitan or Six Tone Symmetrical. You are also able to create a custom `ScaleType` in the following manner: `ScaleType.custom(intervals: [Interval], description: String)` 
-- `Scale` defines a scale with a `ScaleType` and root `Key`. You are then able to, based on the existing scale, generate can generate notes of that scale in an octave range or it's `HarmonicField` which is all the possible triad, tetrad or extended chords in a scale.
+- `ScaleType` enum exists as a covenient shortcut providing a substantial amount of predefined scales for the user such that you don't have to do the heavy lifting or defining each scale every time you want to use it. Various scales are available, from the standard major/minor to more exotic scales such as Promethean Neopolitan or Six Tone Symmetrical. You are also able to create a custom `ScaleType` in the following manner: `ScaleType.custom(intervals: [Interval], description: String)` 
+- `Scale` defines a scale with a `ScaleType` and root `Key`. You are then able to generate notes of that scale in an octave range, as well as generate the scale's `HarmonicField` which are all the possible triad, tetrad or extended chords in a scale.
 
 ``` swift
 let gLocrian = Scale(type: .locrian, key: Key(type: .g))
