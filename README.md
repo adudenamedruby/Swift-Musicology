@@ -27,7 +27,7 @@ It should be noted that all data types conform to `Codable`, `CustomStringConver
 
 - All keys can be defined with `Key` struct.  It has a `KeyType` where you can set the base key like C, D, A#, or Fb. All  keys must be initialised with an  `Accidental`  which can be `.natural`, `.flat`, `sharp` or something more custom such as`.sharps(amount: 3)`.
 - `Pitch`es are created with with a `Key` and octave. You may also create `Pitch`es with MIDI note number.  `rawValue` of a pitch is its MIDI note number.
-- The `Pitch`, `Key`, `Accidental` structs have had custom operators defined for equatable, `+` and `-` in order to make calulations easier.
+- The `Pitch`, `Key`, `Accidental` structs have had custom operators defined for `==`, `+` and `-` in order to make calulations easier.
 - Finally, these both of these structs can be defined with strings as well, though, for specificity's sake, it is advisable to not do so.
 
 ``` swift
