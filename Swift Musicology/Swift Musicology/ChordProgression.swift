@@ -9,23 +9,24 @@
 import Foundation
 
 /// A struct for storing custom progressions.
-public struct CustomChordProgression: Codable, CustomStringConvertible {
+public struct CustomChordProgression: Codable {
     /// Name of the progression.
     public var name: String
     /// Chord progression with `ChordProgresion.custom` type.
     public var progression: ChordProgression
-    
-    
-    // MARK: CustomStringConvertible
+}
 
+extension CustomChordProgression: CustomStringConvertible {
     public var description: String {
       return name
     }
-
 }
 
+
+// MARK: - ChordProgressionNode
+
 /// A node of chord progression in intervals.
-public enum ChordProgressionNode: Int, CustomStringConvertible, Codable {
+public enum ChordProgressionNode: Int, Codable {
     /// First-degree node
     case i
     /// Second-degree node
@@ -63,9 +64,9 @@ public enum ChordProgressionNode: Int, CustomStringConvertible, Codable {
     
     /// All nodes.
     public static let all: [ChordProgressionNode] = [.i, .ii, .iii, .iv, .v, .vi, .vii]
-    
-    // MARK: CustomStringConvertible
-    
+}
+
+extension ChordProgressionNode: CustomStringConvertible {
     /// Returns roman numeric string of the node.
     public var description: String {
         switch self {
@@ -80,8 +81,11 @@ public enum ChordProgressionNode: Int, CustomStringConvertible, Codable {
     }
 }
 
+
+// MARK: ChordProgression Definition
+
 /// Chord progression enum that you can create hard-coded and custom progressions.
-public enum ChordProgression: CustomStringConvertible, Codable {
+public struct ChordProgression {
     /// All nodes from first to seventh.
     public static let allNodes = ChordProgression(nodes: [.i, .ii, .iii, .iv, .v, .vi, .vii])
     /// I - V - VI - IV progression.
@@ -170,9 +174,10 @@ public enum ChordProgression: CustomStringConvertible, Codable {
       }
       return chords
     }
+}
 
-    // MARK: CustomStringConvertible
-
+extension ChordProgression: CustomStringConvertible {
+    
     /// Returns the chord progression name.
     public var description: String {
       if self == ChordProgression.allNodes {
@@ -180,9 +185,10 @@ public enum ChordProgression: CustomStringConvertible, Codable {
       }
       return nodes.map({ "\($0)" }).joined(separator: " - ")
     }
+}
 
-    // MARK: Codable
-
+extension ChordProgression: Codable {
+    
     /// Codable protocol `CodingKey`s
     ///
     /// - nodes: Coding key for the nodes.
@@ -208,10 +214,10 @@ public enum ChordProgression: CustomStringConvertible, Codable {
       var container = encoder.container(keyedBy: CodingKeys.self)
       try container.encode(nodes, forKey: .nodes)
     }
+}
 
-    // MARK: Equatable
-
+extension ChordProgression: Equatable {
     public static func == (lhs: ChordProgression, rhs: ChordProgression) -> Bool {
-      return lhs.nodes == rhs.nodes
+        return lhs.nodes == rhs.nodes
     }
 }

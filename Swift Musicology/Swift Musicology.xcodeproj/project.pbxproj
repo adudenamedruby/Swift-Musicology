@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0BA905CF245DCFA800D83B29 /* PitchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA905CE245DCFA800D83B29 /* PitchTests.swift */; };
+		0BA905D1245DCFB400D83B29 /* TempoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA905D0245DCFB400D83B29 /* TempoTests.swift */; };
+		0BA905D3245DCFC300D83B29 /* Scale Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA905D2245DCFC300D83B29 /* Scale Tests.swift */; };
+		0BA905D5245DCFD100D83B29 /* ChordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA905D4245DCFD100D83B29 /* ChordTests.swift */; };
 		0BFB65E1245DBD280019EBCB /* SwiftMusicology_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BFB65DF245DBD280019EBCB /* SwiftMusicology_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0BFB65EE245DBD380019EBCB /* SwiftMusicology_watchOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BFB65EC245DBD380019EBCB /* SwiftMusicology_watchOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0BFB65FB245DBD420019EBCB /* SwiftMusicology_tvOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BFB65F9245DBD420019EBCB /* SwiftMusicology_tvOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -75,6 +79,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0BA905CE245DCFA800D83B29 /* PitchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitchTests.swift; sourceTree = "<group>"; };
+		0BA905D0245DCFB400D83B29 /* TempoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempoTests.swift; sourceTree = "<group>"; };
+		0BA905D2245DCFC300D83B29 /* Scale Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Scale Tests.swift"; sourceTree = "<group>"; };
+		0BA905D4245DCFD100D83B29 /* ChordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordTests.swift; sourceTree = "<group>"; };
 		0BFB65B6245DBC0E0019EBCB /* Info-iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
 		0BFB65B7245DBC0E0019EBCB /* Info-Mac.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-Mac.plist"; sourceTree = "<group>"; };
 		0BFB65B8245DBC0E0019EBCB /* Info-TV.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-TV.plist"; sourceTree = "<group>"; };
@@ -258,8 +266,12 @@
 		1207E0D221AAE05300915CCD /* Swift MusicologyTests */ = {
 			isa = PBXGroup;
 			children = (
-				1207E0D321AAE05300915CCD /* Swift_MusicologyTests.swift */,
 				1207E0D521AAE05300915CCD /* Info.plist */,
+				1207E0D321AAE05300915CCD /* Swift_MusicologyTests.swift */,
+				0BA905CE245DCFA800D83B29 /* PitchTests.swift */,
+				0BA905D0245DCFB400D83B29 /* TempoTests.swift */,
+				0BA905D2245DCFC300D83B29 /* Scale Tests.swift */,
+				0BA905D4245DCFD100D83B29 /* ChordTests.swift */,
 			);
 			path = "Swift MusicologyTests";
 			sourceTree = "<group>";
@@ -571,7 +583,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BA905CF245DCFA800D83B29 /* PitchTests.swift in Sources */,
+				0BA905D1245DCFB400D83B29 /* TempoTests.swift in Sources */,
 				1207E0D421AAE05300915CCD /* Swift_MusicologyTests.swift in Sources */,
+				0BA905D3245DCFC300D83B29 /* Scale Tests.swift in Sources */,
+				0BA905D5245DCFD100D83B29 /* ChordTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
