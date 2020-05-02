@@ -7,37 +7,95 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1207E0CF21AAE05300915CCD /* Swift_Musicology.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1207E0C521AAE05300915CCD /* Swift_Musicology.framework */; };
+		0BFB65E1245DBD280019EBCB /* SwiftMusicology_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BFB65DF245DBD280019EBCB /* SwiftMusicology_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0BFB65EE245DBD380019EBCB /* SwiftMusicology_watchOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BFB65EC245DBD380019EBCB /* SwiftMusicology_watchOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0BFB65FB245DBD420019EBCB /* SwiftMusicology_tvOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BFB65F9245DBD420019EBCB /* SwiftMusicology_tvOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0BFB6608245DBD500019EBCB /* SwiftMusicology_macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BFB6606245DBD500019EBCB /* SwiftMusicology_macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0BFB660C245DBDD10019EBCB /* Info-iOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0BFB65B6245DBC0E0019EBCB /* Info-iOS.plist */; };
+		0BFB660D245DBDD10019EBCB /* Info-Mac.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0BFB65B7245DBC0E0019EBCB /* Info-Mac.plist */; };
+		0BFB660E245DBDD10019EBCB /* Info-TV.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0BFB65B8245DBC0E0019EBCB /* Info-TV.plist */; };
+		0BFB660F245DBDD10019EBCB /* Info-Watch.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0BFB65B9245DBC0E0019EBCB /* Info-Watch.plist */; };
+		0BFB6610245DBDE40019EBCB /* NoteValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0DF21AAE09500915CCD /* NoteValue.swift */; };
+		0BFB6611245DBDE40019EBCB /* TimeSignature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0E121AAE0D100915CCD /* TimeSignature.swift */; };
+		0BFB6612245DBDE40019EBCB /* Tempo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0E321AAE10E00915CCD /* Tempo.swift */; };
+		0BFB6613245DBDE40019EBCB /* Accidental.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0E521AAE13E00915CCD /* Accidental.swift */; };
+		0BFB6614245DBDE40019EBCB /* Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0E721AAE15100915CCD /* Interval.swift */; };
+		0BFB6615245DBDE40019EBCB /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0E921AAE15700915CCD /* Key.swift */; };
+		0BFB6616245DBDE40019EBCB /* Pitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0EB21AAE16000915CCD /* Pitch.swift */; };
+		0BFB6617245DBDE40019EBCB /* Chord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0ED21AAE16600915CCD /* Chord.swift */; };
+		0BFB6618245DBDE40019EBCB /* ChordProgression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0EF21AAE17000915CCD /* ChordProgression.swift */; };
+		0BFB6619245DBDE40019EBCB /* Scale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0F121AAE17B00915CCD /* Scale.swift */; };
+		0BFB661A245DBDE40019EBCB /* ScaleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0F521AAEF4800915CCD /* ScaleType.swift */; };
+		0BFB661B245DBE060019EBCB /* NoteValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0DF21AAE09500915CCD /* NoteValue.swift */; };
+		0BFB661C245DBE060019EBCB /* TimeSignature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0E121AAE0D100915CCD /* TimeSignature.swift */; };
+		0BFB661D245DBE060019EBCB /* Tempo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0E321AAE10E00915CCD /* Tempo.swift */; };
+		0BFB661E245DBE060019EBCB /* Accidental.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0E521AAE13E00915CCD /* Accidental.swift */; };
+		0BFB661F245DBE060019EBCB /* Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0E721AAE15100915CCD /* Interval.swift */; };
+		0BFB6620245DBE060019EBCB /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0E921AAE15700915CCD /* Key.swift */; };
+		0BFB6621245DBE060019EBCB /* Pitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0EB21AAE16000915CCD /* Pitch.swift */; };
+		0BFB6622245DBE060019EBCB /* Chord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0ED21AAE16600915CCD /* Chord.swift */; };
+		0BFB6623245DBE060019EBCB /* ChordProgression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0EF21AAE17000915CCD /* ChordProgression.swift */; };
+		0BFB6624245DBE060019EBCB /* Scale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0F121AAE17B00915CCD /* Scale.swift */; };
+		0BFB6625245DBE060019EBCB /* ScaleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0F521AAEF4800915CCD /* ScaleType.swift */; };
+		0BFB6626245DBE1B0019EBCB /* Info-iOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0BFB65B6245DBC0E0019EBCB /* Info-iOS.plist */; };
+		0BFB6627245DBE1B0019EBCB /* Info-Mac.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0BFB65B7245DBC0E0019EBCB /* Info-Mac.plist */; };
+		0BFB6628245DBE1B0019EBCB /* Info-TV.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0BFB65B8245DBC0E0019EBCB /* Info-TV.plist */; };
+		0BFB6629245DBE1B0019EBCB /* Info-Watch.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0BFB65B9245DBC0E0019EBCB /* Info-Watch.plist */; };
+		0BFB662A245DBE220019EBCB /* Info-iOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0BFB65B6245DBC0E0019EBCB /* Info-iOS.plist */; };
+		0BFB662B245DBE220019EBCB /* Info-Mac.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0BFB65B7245DBC0E0019EBCB /* Info-Mac.plist */; };
+		0BFB662C245DBE220019EBCB /* Info-TV.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0BFB65B8245DBC0E0019EBCB /* Info-TV.plist */; };
+		0BFB662D245DBE220019EBCB /* Info-Watch.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0BFB65B9245DBC0E0019EBCB /* Info-Watch.plist */; };
+		0BFB662E245DBE270019EBCB /* NoteValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0DF21AAE09500915CCD /* NoteValue.swift */; };
+		0BFB662F245DBE270019EBCB /* TimeSignature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0E121AAE0D100915CCD /* TimeSignature.swift */; };
+		0BFB6630245DBE270019EBCB /* Tempo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0E321AAE10E00915CCD /* Tempo.swift */; };
+		0BFB6631245DBE270019EBCB /* Accidental.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0E521AAE13E00915CCD /* Accidental.swift */; };
+		0BFB6632245DBE270019EBCB /* Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0E721AAE15100915CCD /* Interval.swift */; };
+		0BFB6633245DBE270019EBCB /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0E921AAE15700915CCD /* Key.swift */; };
+		0BFB6634245DBE270019EBCB /* Pitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0EB21AAE16000915CCD /* Pitch.swift */; };
+		0BFB6635245DBE270019EBCB /* Chord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0ED21AAE16600915CCD /* Chord.swift */; };
+		0BFB6636245DBE270019EBCB /* ChordProgression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0EF21AAE17000915CCD /* ChordProgression.swift */; };
+		0BFB6637245DBE270019EBCB /* Scale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0F121AAE17B00915CCD /* Scale.swift */; };
+		0BFB6638245DBE270019EBCB /* ScaleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0F521AAEF4800915CCD /* ScaleType.swift */; };
+		0BFB6639245DBE2D0019EBCB /* NoteValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0DF21AAE09500915CCD /* NoteValue.swift */; };
+		0BFB663A245DBE2D0019EBCB /* TimeSignature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0E121AAE0D100915CCD /* TimeSignature.swift */; };
+		0BFB663B245DBE2D0019EBCB /* Tempo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0E321AAE10E00915CCD /* Tempo.swift */; };
+		0BFB663C245DBE2D0019EBCB /* Accidental.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0E521AAE13E00915CCD /* Accidental.swift */; };
+		0BFB663D245DBE2D0019EBCB /* Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0E721AAE15100915CCD /* Interval.swift */; };
+		0BFB663E245DBE2D0019EBCB /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0E921AAE15700915CCD /* Key.swift */; };
+		0BFB663F245DBE2D0019EBCB /* Pitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0EB21AAE16000915CCD /* Pitch.swift */; };
+		0BFB6640245DBE2D0019EBCB /* Chord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0ED21AAE16600915CCD /* Chord.swift */; };
+		0BFB6641245DBE2D0019EBCB /* ChordProgression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0EF21AAE17000915CCD /* ChordProgression.swift */; };
+		0BFB6642245DBE2D0019EBCB /* Scale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0F121AAE17B00915CCD /* Scale.swift */; };
+		0BFB6643245DBE2D0019EBCB /* ScaleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0F521AAEF4800915CCD /* ScaleType.swift */; };
+		0BFB6644245DBE320019EBCB /* Info-iOS.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0BFB65B6245DBC0E0019EBCB /* Info-iOS.plist */; };
+		0BFB6645245DBE320019EBCB /* Info-Mac.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0BFB65B7245DBC0E0019EBCB /* Info-Mac.plist */; };
+		0BFB6646245DBE320019EBCB /* Info-TV.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0BFB65B8245DBC0E0019EBCB /* Info-TV.plist */; };
+		0BFB6647245DBE320019EBCB /* Info-Watch.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0BFB65B9245DBC0E0019EBCB /* Info-Watch.plist */; };
 		1207E0D421AAE05300915CCD /* Swift_MusicologyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0D321AAE05300915CCD /* Swift_MusicologyTests.swift */; };
-		1207E0D621AAE05300915CCD /* Swift_Musicology.h in Headers */ = {isa = PBXBuildFile; fileRef = 1207E0C821AAE05300915CCD /* Swift_Musicology.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1207E0E021AAE09500915CCD /* NoteValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0DF21AAE09500915CCD /* NoteValue.swift */; };
-		1207E0E221AAE0D100915CCD /* TimeSignature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0E121AAE0D100915CCD /* TimeSignature.swift */; };
-		1207E0E421AAE10E00915CCD /* Tempo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0E321AAE10E00915CCD /* Tempo.swift */; };
-		1207E0E621AAE13E00915CCD /* Accidental.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0E521AAE13E00915CCD /* Accidental.swift */; };
-		1207E0E821AAE15100915CCD /* Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0E721AAE15100915CCD /* Interval.swift */; };
-		1207E0EA21AAE15700915CCD /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0E921AAE15700915CCD /* Key.swift */; };
-		1207E0EC21AAE16000915CCD /* Pitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0EB21AAE16000915CCD /* Pitch.swift */; };
-		1207E0EE21AAE16600915CCD /* Chord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0ED21AAE16600915CCD /* Chord.swift */; };
-		1207E0F021AAE17000915CCD /* Chord Progression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0EF21AAE17000915CCD /* Chord Progression.swift */; };
-		1207E0F221AAE17B00915CCD /* Scale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0F121AAE17B00915CCD /* Scale.swift */; };
-		1207E0F421AAE24300915CCD /* MusicTheoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0F321AAE24300915CCD /* MusicTheoryTests.swift */; };
-		1207E0F621AAEF4800915CCD /* ScaleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207E0F521AAEF4800915CCD /* ScaleType.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		1207E0D021AAE05300915CCD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1207E0BC21AAE05300915CCD /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1207E0C421AAE05300915CCD;
-			remoteInfo = "Swift Musicology";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		1207E0C521AAE05300915CCD /* Swift_Musicology.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swift_Musicology.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0BFB65B6245DBC0E0019EBCB /* Info-iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
+		0BFB65B7245DBC0E0019EBCB /* Info-Mac.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-Mac.plist"; sourceTree = "<group>"; };
+		0BFB65B8245DBC0E0019EBCB /* Info-TV.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-TV.plist"; sourceTree = "<group>"; };
+		0BFB65B9245DBC0E0019EBCB /* Info-Watch.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-Watch.plist"; sourceTree = "<group>"; };
+		0BFB65C5245DBCF90019EBCB /* SwiftMusicology.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftMusicology.h; sourceTree = "<group>"; };
+		0BFB65C6245DBCF90019EBCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0BFB65D2245DBD0F0019EBCB /* SwiftMusicology.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftMusicology.h; sourceTree = "<group>"; };
+		0BFB65D3245DBD0F0019EBCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0BFB65DD245DBD280019EBCB /* SwiftMusicology_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftMusicology_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0BFB65DF245DBD280019EBCB /* SwiftMusicology_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftMusicology_iOS.h; sourceTree = "<group>"; };
+		0BFB65E0245DBD280019EBCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0BFB65EA245DBD380019EBCB /* SwiftMusicology_watchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftMusicology_watchOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0BFB65EC245DBD380019EBCB /* SwiftMusicology_watchOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftMusicology_watchOS.h; sourceTree = "<group>"; };
+		0BFB65ED245DBD380019EBCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0BFB65F7245DBD420019EBCB /* SwiftMusicology_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftMusicology_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0BFB65F9245DBD420019EBCB /* SwiftMusicology_tvOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftMusicology_tvOS.h; sourceTree = "<group>"; };
+		0BFB65FA245DBD420019EBCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0BFB6604245DBD500019EBCB /* SwiftMusicology_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftMusicology_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0BFB6606245DBD500019EBCB /* SwiftMusicology_macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftMusicology_macOS.h; sourceTree = "<group>"; };
+		0BFB6607245DBD500019EBCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1207E0C821AAE05300915CCD /* Swift_Musicology.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Swift_Musicology.h; sourceTree = "<group>"; };
-		1207E0C921AAE05300915CCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1207E0CE21AAE05300915CCD /* Swift MusicologyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swift MusicologyTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1207E0D321AAE05300915CCD /* Swift_MusicologyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_MusicologyTests.swift; sourceTree = "<group>"; };
 		1207E0D521AAE05300915CCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,14 +107,34 @@
 		1207E0E921AAE15700915CCD /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		1207E0EB21AAE16000915CCD /* Pitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pitch.swift; sourceTree = "<group>"; };
 		1207E0ED21AAE16600915CCD /* Chord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chord.swift; sourceTree = "<group>"; };
-		1207E0EF21AAE17000915CCD /* Chord Progression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Chord Progression.swift"; sourceTree = "<group>"; };
+		1207E0EF21AAE17000915CCD /* ChordProgression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordProgression.swift; sourceTree = "<group>"; };
 		1207E0F121AAE17B00915CCD /* Scale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scale.swift; sourceTree = "<group>"; };
-		1207E0F321AAE24300915CCD /* MusicTheoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTheoryTests.swift; sourceTree = "<group>"; };
 		1207E0F521AAEF4800915CCD /* ScaleType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1207E0C221AAE05300915CCD /* Frameworks */ = {
+		0BFB65DA245DBD280019EBCB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0BFB65E7245DBD380019EBCB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0BFB65F4245DBD420019EBCB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0BFB6601245DBD500019EBCB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -67,18 +145,77 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1207E0CF21AAE05300915CCD /* Swift_Musicology.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0BFB65C4245DBCF90019EBCB /* SwiftMusicology */ = {
+			isa = PBXGroup;
+			children = (
+				0BFB65C5245DBCF90019EBCB /* SwiftMusicology.h */,
+				0BFB65C6245DBCF90019EBCB /* Info.plist */,
+			);
+			path = SwiftMusicology;
+			sourceTree = "<group>";
+		};
+		0BFB65D1245DBD0F0019EBCB /* SwiftMusicology */ = {
+			isa = PBXGroup;
+			children = (
+				0BFB65D2245DBD0F0019EBCB /* SwiftMusicology.h */,
+				0BFB65D3245DBD0F0019EBCB /* Info.plist */,
+			);
+			path = SwiftMusicology;
+			sourceTree = "<group>";
+		};
+		0BFB65DE245DBD280019EBCB /* SwiftMusicology iOS */ = {
+			isa = PBXGroup;
+			children = (
+				0BFB65DF245DBD280019EBCB /* SwiftMusicology_iOS.h */,
+				0BFB65E0245DBD280019EBCB /* Info.plist */,
+			);
+			path = "SwiftMusicology iOS";
+			sourceTree = "<group>";
+		};
+		0BFB65EB245DBD380019EBCB /* SwiftMusicology watchOS */ = {
+			isa = PBXGroup;
+			children = (
+				0BFB65EC245DBD380019EBCB /* SwiftMusicology_watchOS.h */,
+				0BFB65ED245DBD380019EBCB /* Info.plist */,
+			);
+			path = "SwiftMusicology watchOS";
+			sourceTree = "<group>";
+		};
+		0BFB65F8245DBD420019EBCB /* SwiftMusicology tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				0BFB65F9245DBD420019EBCB /* SwiftMusicology_tvOS.h */,
+				0BFB65FA245DBD420019EBCB /* Info.plist */,
+			);
+			path = "SwiftMusicology tvOS";
+			sourceTree = "<group>";
+		};
+		0BFB6605245DBD500019EBCB /* SwiftMusicology macOS */ = {
+			isa = PBXGroup;
+			children = (
+				0BFB6606245DBD500019EBCB /* SwiftMusicology_macOS.h */,
+				0BFB6607245DBD500019EBCB /* Info.plist */,
+			);
+			path = "SwiftMusicology macOS";
+			sourceTree = "<group>";
+		};
 		1207E0BB21AAE05300915CCD = {
 			isa = PBXGroup;
 			children = (
 				1207E0C721AAE05300915CCD /* Swift Musicology */,
 				1207E0D221AAE05300915CCD /* Swift MusicologyTests */,
+				0BFB65C4245DBCF90019EBCB /* SwiftMusicology */,
+				0BFB65D1245DBD0F0019EBCB /* SwiftMusicology */,
+				0BFB65DE245DBD280019EBCB /* SwiftMusicology iOS */,
+				0BFB65EB245DBD380019EBCB /* SwiftMusicology watchOS */,
+				0BFB65F8245DBD420019EBCB /* SwiftMusicology tvOS */,
+				0BFB6605245DBD500019EBCB /* SwiftMusicology macOS */,
 				1207E0C621AAE05300915CCD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -86,8 +223,11 @@
 		1207E0C621AAE05300915CCD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1207E0C521AAE05300915CCD /* Swift_Musicology.framework */,
 				1207E0CE21AAE05300915CCD /* Swift MusicologyTests.xctest */,
+				0BFB65DD245DBD280019EBCB /* SwiftMusicology_iOS.framework */,
+				0BFB65EA245DBD380019EBCB /* SwiftMusicology_watchOS.framework */,
+				0BFB65F7245DBD420019EBCB /* SwiftMusicology_tvOS.framework */,
+				0BFB6604245DBD500019EBCB /* SwiftMusicology_macOS.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,19 +235,22 @@
 		1207E0C721AAE05300915CCD /* Swift Musicology */ = {
 			isa = PBXGroup;
 			children = (
-				1207E0C821AAE05300915CCD /* Swift_Musicology.h */,
-				1207E0C921AAE05300915CCD /* Info.plist */,
-				1207E0DF21AAE09500915CCD /* NoteValue.swift */,
-				1207E0E121AAE0D100915CCD /* TimeSignature.swift */,
-				1207E0E321AAE10E00915CCD /* Tempo.swift */,
 				1207E0E521AAE13E00915CCD /* Accidental.swift */,
+				1207E0ED21AAE16600915CCD /* Chord.swift */,
+				1207E0EF21AAE17000915CCD /* ChordProgression.swift */,
+				0BFB65B6245DBC0E0019EBCB /* Info-iOS.plist */,
+				0BFB65B7245DBC0E0019EBCB /* Info-Mac.plist */,
+				0BFB65B8245DBC0E0019EBCB /* Info-TV.plist */,
+				0BFB65B9245DBC0E0019EBCB /* Info-Watch.plist */,
 				1207E0E721AAE15100915CCD /* Interval.swift */,
 				1207E0E921AAE15700915CCD /* Key.swift */,
+				1207E0DF21AAE09500915CCD /* NoteValue.swift */,
 				1207E0EB21AAE16000915CCD /* Pitch.swift */,
-				1207E0ED21AAE16600915CCD /* Chord.swift */,
-				1207E0EF21AAE17000915CCD /* Chord Progression.swift */,
 				1207E0F121AAE17B00915CCD /* Scale.swift */,
 				1207E0F521AAEF4800915CCD /* ScaleType.swift */,
+				1207E0C821AAE05300915CCD /* Swift_Musicology.h */,
+				1207E0E321AAE10E00915CCD /* Tempo.swift */,
+				1207E0E121AAE0D100915CCD /* TimeSignature.swift */,
 			);
 			path = "Swift Musicology";
 			sourceTree = "<group>";
@@ -116,7 +259,6 @@
 			isa = PBXGroup;
 			children = (
 				1207E0D321AAE05300915CCD /* Swift_MusicologyTests.swift */,
-				1207E0F321AAE24300915CCD /* MusicTheoryTests.swift */,
 				1207E0D521AAE05300915CCD /* Info.plist */,
 			);
 			path = "Swift MusicologyTests";
@@ -125,33 +267,111 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		1207E0C021AAE05300915CCD /* Headers */ = {
+		0BFB65D8245DBD280019EBCB /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1207E0D621AAE05300915CCD /* Swift_Musicology.h in Headers */,
+				0BFB65E1245DBD280019EBCB /* SwiftMusicology_iOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0BFB65E5245DBD380019EBCB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0BFB65EE245DBD380019EBCB /* SwiftMusicology_watchOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0BFB65F2245DBD420019EBCB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0BFB65FB245DBD420019EBCB /* SwiftMusicology_tvOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0BFB65FF245DBD500019EBCB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0BFB6608245DBD500019EBCB /* SwiftMusicology_macOS.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		1207E0C421AAE05300915CCD /* Swift Musicology */ = {
+		0BFB65DC245DBD280019EBCB /* SwiftMusicology iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1207E0D921AAE05300915CCD /* Build configuration list for PBXNativeTarget "Swift Musicology" */;
+			buildConfigurationList = 0BFB65E2245DBD280019EBCB /* Build configuration list for PBXNativeTarget "SwiftMusicology iOS" */;
 			buildPhases = (
-				1207E0C021AAE05300915CCD /* Headers */,
-				1207E0C121AAE05300915CCD /* Sources */,
-				1207E0C221AAE05300915CCD /* Frameworks */,
-				1207E0C321AAE05300915CCD /* Resources */,
+				0BFB65D8245DBD280019EBCB /* Headers */,
+				0BFB65D9245DBD280019EBCB /* Sources */,
+				0BFB65DA245DBD280019EBCB /* Frameworks */,
+				0BFB65DB245DBD280019EBCB /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Swift Musicology";
-			productName = "Swift Musicology";
-			productReference = 1207E0C521AAE05300915CCD /* Swift_Musicology.framework */;
+			name = "SwiftMusicology iOS";
+			productName = "SwiftMusicology iOS";
+			productReference = 0BFB65DD245DBD280019EBCB /* SwiftMusicology_iOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		0BFB65E9245DBD380019EBCB /* SwiftMusicology watchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0BFB65EF245DBD380019EBCB /* Build configuration list for PBXNativeTarget "SwiftMusicology watchOS" */;
+			buildPhases = (
+				0BFB65E5245DBD380019EBCB /* Headers */,
+				0BFB65E6245DBD380019EBCB /* Sources */,
+				0BFB65E7245DBD380019EBCB /* Frameworks */,
+				0BFB65E8245DBD380019EBCB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SwiftMusicology watchOS";
+			productName = "SwiftMusicology watchOS";
+			productReference = 0BFB65EA245DBD380019EBCB /* SwiftMusicology_watchOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		0BFB65F6245DBD420019EBCB /* SwiftMusicology tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0BFB65FC245DBD420019EBCB /* Build configuration list for PBXNativeTarget "SwiftMusicology tvOS" */;
+			buildPhases = (
+				0BFB65F2245DBD420019EBCB /* Headers */,
+				0BFB65F3245DBD420019EBCB /* Sources */,
+				0BFB65F4245DBD420019EBCB /* Frameworks */,
+				0BFB65F5245DBD420019EBCB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SwiftMusicology tvOS";
+			productName = "SwiftMusicology tvOS";
+			productReference = 0BFB65F7245DBD420019EBCB /* SwiftMusicology_tvOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		0BFB6603245DBD500019EBCB /* SwiftMusicology macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0BFB6609245DBD500019EBCB /* Build configuration list for PBXNativeTarget "SwiftMusicology macOS" */;
+			buildPhases = (
+				0BFB65FF245DBD500019EBCB /* Headers */,
+				0BFB6600245DBD500019EBCB /* Sources */,
+				0BFB6601245DBD500019EBCB /* Frameworks */,
+				0BFB6602245DBD500019EBCB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SwiftMusicology macOS";
+			productName = "SwiftMusicology macOS";
+			productReference = 0BFB6604245DBD500019EBCB /* SwiftMusicology_macOS.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		1207E0CD21AAE05300915CCD /* Swift MusicologyTests */ = {
@@ -165,7 +385,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				1207E0D121AAE05300915CCD /* PBXTargetDependency */,
 			);
 			name = "Swift MusicologyTests";
 			productName = "Swift MusicologyTests";
@@ -182,9 +401,17 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "roux g. buciu";
 				TargetAttributes = {
-					1207E0C421AAE05300915CCD = {
-						CreatedOnToolsVersion = 10.1;
-						LastSwiftMigration = 1010;
+					0BFB65DC245DBD280019EBCB = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+					0BFB65E9245DBD380019EBCB = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+					0BFB65F6245DBD420019EBCB = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+					0BFB6603245DBD500019EBCB = {
+						CreatedOnToolsVersion = 11.4.1;
 					};
 					1207E0CD21AAE05300915CCD = {
 						CreatedOnToolsVersion = 10.1;
@@ -197,23 +424,64 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 1207E0BB21AAE05300915CCD;
 			productRefGroup = 1207E0C621AAE05300915CCD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1207E0C421AAE05300915CCD /* Swift Musicology */,
+				0BFB65DC245DBD280019EBCB /* SwiftMusicology iOS */,
+				0BFB6603245DBD500019EBCB /* SwiftMusicology macOS */,
+				0BFB65F6245DBD420019EBCB /* SwiftMusicology tvOS */,
+				0BFB65E9245DBD380019EBCB /* SwiftMusicology watchOS */,
 				1207E0CD21AAE05300915CCD /* Swift MusicologyTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1207E0C321AAE05300915CCD /* Resources */ = {
+		0BFB65DB245DBD280019EBCB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BFB660C245DBDD10019EBCB /* Info-iOS.plist in Resources */,
+				0BFB660D245DBDD10019EBCB /* Info-Mac.plist in Resources */,
+				0BFB660E245DBDD10019EBCB /* Info-TV.plist in Resources */,
+				0BFB660F245DBDD10019EBCB /* Info-Watch.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0BFB65E8245DBD380019EBCB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0BFB6644245DBE320019EBCB /* Info-iOS.plist in Resources */,
+				0BFB6645245DBE320019EBCB /* Info-Mac.plist in Resources */,
+				0BFB6646245DBE320019EBCB /* Info-TV.plist in Resources */,
+				0BFB6647245DBE320019EBCB /* Info-Watch.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0BFB65F5245DBD420019EBCB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0BFB662A245DBE220019EBCB /* Info-iOS.plist in Resources */,
+				0BFB662B245DBE220019EBCB /* Info-Mac.plist in Resources */,
+				0BFB662C245DBE220019EBCB /* Info-TV.plist in Resources */,
+				0BFB662D245DBE220019EBCB /* Info-Watch.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0BFB6602245DBD500019EBCB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0BFB6626245DBE1B0019EBCB /* Info-iOS.plist in Resources */,
+				0BFB6627245DBE1B0019EBCB /* Info-Mac.plist in Resources */,
+				0BFB6628245DBE1B0019EBCB /* Info-TV.plist in Resources */,
+				0BFB6629245DBE1B0019EBCB /* Info-Watch.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,21 +495,75 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1207E0C121AAE05300915CCD /* Sources */ = {
+		0BFB65D9245DBD280019EBCB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1207E0E821AAE15100915CCD /* Interval.swift in Sources */,
-				1207E0EC21AAE16000915CCD /* Pitch.swift in Sources */,
-				1207E0F021AAE17000915CCD /* Chord Progression.swift in Sources */,
-				1207E0E421AAE10E00915CCD /* Tempo.swift in Sources */,
-				1207E0E021AAE09500915CCD /* NoteValue.swift in Sources */,
-				1207E0E221AAE0D100915CCD /* TimeSignature.swift in Sources */,
-				1207E0E621AAE13E00915CCD /* Accidental.swift in Sources */,
-				1207E0F621AAEF4800915CCD /* ScaleType.swift in Sources */,
-				1207E0EE21AAE16600915CCD /* Chord.swift in Sources */,
-				1207E0F221AAE17B00915CCD /* Scale.swift in Sources */,
-				1207E0EA21AAE15700915CCD /* Key.swift in Sources */,
+				0BFB6610245DBDE40019EBCB /* NoteValue.swift in Sources */,
+				0BFB6611245DBDE40019EBCB /* TimeSignature.swift in Sources */,
+				0BFB6612245DBDE40019EBCB /* Tempo.swift in Sources */,
+				0BFB6613245DBDE40019EBCB /* Accidental.swift in Sources */,
+				0BFB6614245DBDE40019EBCB /* Interval.swift in Sources */,
+				0BFB6615245DBDE40019EBCB /* Key.swift in Sources */,
+				0BFB6616245DBDE40019EBCB /* Pitch.swift in Sources */,
+				0BFB6617245DBDE40019EBCB /* Chord.swift in Sources */,
+				0BFB6618245DBDE40019EBCB /* ChordProgression.swift in Sources */,
+				0BFB6619245DBDE40019EBCB /* Scale.swift in Sources */,
+				0BFB661A245DBDE40019EBCB /* ScaleType.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0BFB65E6245DBD380019EBCB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0BFB6639245DBE2D0019EBCB /* NoteValue.swift in Sources */,
+				0BFB663A245DBE2D0019EBCB /* TimeSignature.swift in Sources */,
+				0BFB663B245DBE2D0019EBCB /* Tempo.swift in Sources */,
+				0BFB663C245DBE2D0019EBCB /* Accidental.swift in Sources */,
+				0BFB663D245DBE2D0019EBCB /* Interval.swift in Sources */,
+				0BFB663E245DBE2D0019EBCB /* Key.swift in Sources */,
+				0BFB663F245DBE2D0019EBCB /* Pitch.swift in Sources */,
+				0BFB6640245DBE2D0019EBCB /* Chord.swift in Sources */,
+				0BFB6641245DBE2D0019EBCB /* ChordProgression.swift in Sources */,
+				0BFB6642245DBE2D0019EBCB /* Scale.swift in Sources */,
+				0BFB6643245DBE2D0019EBCB /* ScaleType.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0BFB65F3245DBD420019EBCB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0BFB662E245DBE270019EBCB /* NoteValue.swift in Sources */,
+				0BFB662F245DBE270019EBCB /* TimeSignature.swift in Sources */,
+				0BFB6630245DBE270019EBCB /* Tempo.swift in Sources */,
+				0BFB6631245DBE270019EBCB /* Accidental.swift in Sources */,
+				0BFB6632245DBE270019EBCB /* Interval.swift in Sources */,
+				0BFB6633245DBE270019EBCB /* Key.swift in Sources */,
+				0BFB6634245DBE270019EBCB /* Pitch.swift in Sources */,
+				0BFB6635245DBE270019EBCB /* Chord.swift in Sources */,
+				0BFB6636245DBE270019EBCB /* ChordProgression.swift in Sources */,
+				0BFB6637245DBE270019EBCB /* Scale.swift in Sources */,
+				0BFB6638245DBE270019EBCB /* ScaleType.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0BFB6600245DBD500019EBCB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0BFB661B245DBE060019EBCB /* NoteValue.swift in Sources */,
+				0BFB661C245DBE060019EBCB /* TimeSignature.swift in Sources */,
+				0BFB661D245DBE060019EBCB /* Tempo.swift in Sources */,
+				0BFB661E245DBE060019EBCB /* Accidental.swift in Sources */,
+				0BFB661F245DBE060019EBCB /* Interval.swift in Sources */,
+				0BFB6620245DBE060019EBCB /* Key.swift in Sources */,
+				0BFB6621245DBE060019EBCB /* Pitch.swift in Sources */,
+				0BFB6622245DBE060019EBCB /* Chord.swift in Sources */,
+				0BFB6623245DBE060019EBCB /* ChordProgression.swift in Sources */,
+				0BFB6624245DBE060019EBCB /* Scale.swift in Sources */,
+				0BFB6625245DBE060019EBCB /* ScaleType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,22 +571,221 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1207E0F421AAE24300915CCD /* MusicTheoryTests.swift in Sources */,
 				1207E0D421AAE05300915CCD /* Swift_MusicologyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		1207E0D121AAE05300915CCD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1207E0C421AAE05300915CCD /* Swift Musicology */;
-			targetProxy = 1207E0D021AAE05300915CCD /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
+		0BFB65E3245DBD280019EBCB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 8DD4C7KK4P;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "SwiftMusicology iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.acmelabs.SwiftMusicology-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0BFB65E4245DBD280019EBCB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 8DD4C7KK4P;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "SwiftMusicology iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.acmelabs.SwiftMusicology-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		0BFB65F0245DBD380019EBCB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 8DD4C7KK4P;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "SwiftMusicology watchOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.acmelabs.SwiftMusicology-watchOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Debug;
+		};
+		0BFB65F1245DBD380019EBCB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 8DD4C7KK4P;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "SwiftMusicology watchOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.acmelabs.SwiftMusicology-watchOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Release;
+		};
+		0BFB65FD245DBD420019EBCB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 8DD4C7KK4P;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "SwiftMusicology tvOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.acmelabs.SwiftMusicology-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 13.4;
+			};
+			name = Debug;
+		};
+		0BFB65FE245DBD420019EBCB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 8DD4C7KK4P;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "SwiftMusicology tvOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.acmelabs.SwiftMusicology-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 13.4;
+			};
+			name = Release;
+		};
+		0BFB660A245DBD500019EBCB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 8DD4C7KK4P;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "SwiftMusicology macOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.acmelabs.SwiftMusicology-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		0BFB660B245DBD500019EBCB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 8DD4C7KK4P;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "SwiftMusicology macOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.acmelabs.SwiftMusicology-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		1207E0D721AAE05300915CCD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -317,11 +838,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -375,68 +898,17 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		1207E0DA21AAE05300915CCD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 8DD4C7KK4P;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Swift Musicology/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.acmelabs.Swift-Musicology";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		1207E0DB21AAE05300915CCD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 8DD4C7KK4P;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Swift Musicology/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.acmelabs.Swift-Musicology";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -481,20 +953,47 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0BFB65E2245DBD280019EBCB /* Build configuration list for PBXNativeTarget "SwiftMusicology iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0BFB65E3245DBD280019EBCB /* Debug */,
+				0BFB65E4245DBD280019EBCB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0BFB65EF245DBD380019EBCB /* Build configuration list for PBXNativeTarget "SwiftMusicology watchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0BFB65F0245DBD380019EBCB /* Debug */,
+				0BFB65F1245DBD380019EBCB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0BFB65FC245DBD420019EBCB /* Build configuration list for PBXNativeTarget "SwiftMusicology tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0BFB65FD245DBD420019EBCB /* Debug */,
+				0BFB65FE245DBD420019EBCB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0BFB6609245DBD500019EBCB /* Build configuration list for PBXNativeTarget "SwiftMusicology macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0BFB660A245DBD500019EBCB /* Debug */,
+				0BFB660B245DBD500019EBCB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		1207E0BF21AAE05300915CCD /* Build configuration list for PBXProject "Swift Musicology" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1207E0D721AAE05300915CCD /* Debug */,
 				1207E0D821AAE05300915CCD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1207E0D921AAE05300915CCD /* Build configuration list for PBXNativeTarget "Swift Musicology" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1207E0DA21AAE05300915CCD /* Debug */,
-				1207E0DB21AAE05300915CCD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

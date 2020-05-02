@@ -8,11 +8,42 @@
 
 import Foundation
 
+// MARK: - Key Operations
+
+/// Checks if two `Key` types are equal in terms of their int values.
+///
+/// - Parameters:
+///   - lhs: Left hand side of the equation.
+///   - rhs: Right hand side of the equation.
+/// - Returns: Returns the equation value.
+public func == (lhs: Key, rhs: Key) -> Bool {
+    let lhsMod = (lhs.type.rawValue + lhs.accidental.rawValue) % 12
+    let normalizedLhs = lhsMod < 0 ? (12 + lhsMod) : lhsMod
+    
+    let rhsMod = (rhs.type.rawValue + rhs.accidental.rawValue) % 12
+    let normalizedRhs = rhsMod < 0 ? (12 + rhsMod) : rhsMod
+    
+    return normalizedLhs == normalizedRhs
+}
+
+/// Checks if two `Key` types are equal in terms of their type and accidental values.
+///
+/// - Parameters:
+///   - lhs: Left hand side of the equation.
+///   - rhs: Right hand side of the equation.
+/// - Returns: Returns the equation value.
+public func === (lhs: Key, rhs: Key) -> Bool {
+    return lhs.type == rhs.type && lhs.accidental == rhs.accidental
+}
+
+
+// MARK: - Key Definition
+
 /// Represents the keys that notes and pitches are based on.
 public struct Key: Codable, Equatable, Hashable {
     
     /// Base pitch of the key without accidentals. Accidentals will take account in the
-    /// parent struct, `Key`. Integer values are based on C = 0 on western chromatic scale.
+    /// parent struct, `Key`. Integer values are based on C = 0 accidentals on western chromatic scale.
     public enum KeyType: Int, Codable, Equatable, Hashable, ExpressibleByStringLiteral, CustomStringConvertible {
         case c = 0
         case d = 2
@@ -33,7 +64,7 @@ public struct Key: Codable, Equatable, Hashable {
         /// - Parameter distance: Target KeyType distance. Zero is self.
         /// - Returns: Returns the neighbouring KeyType distance away.
         public func key(at distance: Int) -> KeyType {
-            guard let index = KeyType.all.index(of: self)
+            guard let index = KeyType.all.firstIndex(of: self)
                 else { return self }
             
             let normalizedDistance = (distance + index) % KeyType.all.count
@@ -46,8 +77,8 @@ public struct Key: Codable, Equatable, Hashable {
         /// - Parameter keyType: Target `KeyType` you want to compare.
         /// - Returns: Returns the integer value of distance in terms of their array index values.
         public func distance(from keyType: KeyType) -> Int {
-            guard let index = KeyType.all.index(of: self),
-                let targetIndex = KeyType.all.index(of: keyType)
+            guard let index = KeyType.all.firstIndex(of: self),
+                let targetIndex = KeyType.all.firstIndex(of: keyType)
                 else { return 0 }
             return targetIndex - index
         }
@@ -180,14 +211,14 @@ extension Key: ExpressibleByStringLiteral {
         let pattern = "([A-Ga-g])([#♯♭b]*)"
         let regex = try? NSRegularExpression(pattern: pattern, options: [])
         if let regex = regex,
-            let match = regex.firstMatch(in: value, options: [], range: NSRange(0 ..< value.count)),
-            let keyTypeRange = Range(match.range(at: 1), in: value),
-            let accidentalRange = Range(match.range(at: 2), in: value),
-            match.numberOfRanges == 3 {
-            // Set key type
-            keyType = KeyType(stringLiteral: String(value[keyTypeRange]))
-            // Set accidental
-            accidental = Accidental(stringLiteral: String(value[accidentalRange]))
+          let match = regex.firstMatch(in: value, options: [], range: NSRange(0 ..< value.count)),
+          let keyTypeRange = Range(match.range(at: 1), in: value),
+          let accidentalRange = Range(match.range(at: 2), in: value),
+          match.numberOfRanges == 3 {
+          // Set key type
+          keyType = KeyType(stringLiteral: String(value[keyTypeRange]))
+          // Set accidental
+          accidental = Accidental(stringLiteral: String(value[accidentalRange]))
         }
         
         self = Key(type: keyType, accidental: accidental)
@@ -201,33 +232,4 @@ extension Key: CustomStringConvertible {
     public var description: String {
         return "\(type)\(accidental)"
     }
-}
-
-
-// MARK: - Key Operations
-
-/// Checks if two `Key` types are equal in terms of their int values.
-///
-/// - Parameters:
-///   - lhs: Left hand side of the equation.
-///   - rhs: Right hand side of the equation.
-/// - Returns: Returns the equation value.
-public func == (lhs: Key, rhs: Key) -> Bool {
-    let lhsMod = (lhs.type.rawValue + lhs.accidental.rawValue) % 12
-    let normalizedLhs = lhsMod < 0 ? (12 + lhsMod) : lhsMod
-    
-    let rhsMod = (rhs.type.rawValue + rhs.accidental.rawValue) % 12
-    let normalizedRhs = rhsMod < 0 ? (12 + rhsMod) : rhsMod
-    
-    return normalizedLhs == normalizedRhs
-}
-
-/// Checks if two `Key` types are equal in terms of their type and accidental values.
-///
-/// - Parameters:
-///   - lhs: Left hand side of the equation.
-///   - rhs: Right hand side of the equation.
-/// - Returns: Returns the equation value.
-public func === (lhs: Key, rhs: Key) -> Bool {
-    return lhs.type == rhs.type && lhs.accidental == rhs.accidental
 }

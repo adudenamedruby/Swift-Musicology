@@ -8,7 +8,101 @@
 
 import Foundation
 
-/// Used for calculating values of the `Key`s and `Pitche`s.
+// MARK: - Accidental Operations
+
+/// Returns a new accidental by adding up two accidentals in the equation.
+///
+/// - Parameters:
+///   - lhs: Left hand side of the equation.
+///   - rhs: Right hand side of the equation.
+/// - Returns: Returns the sum of two accidentals.
+public func + (lhs: Accidental, rhs: Accidental) -> Accidental {
+    return Accidental(integerLiteral: lhs.rawValue + rhs.rawValue)
+}
+
+/// Returns a new accidental by substracting two accidentals in the equation.
+///
+/// - Parameters:
+///   - lhs: Left hand side of the equation.
+///   - rhs: Right hand side of the equation.
+/// - Returns: Returns the difference of two accidentals.
+public func - (lhs: Accidental, rhs: Accidental) -> Accidental {
+    return Accidental(integerLiteral: lhs.rawValue - rhs.rawValue)
+}
+
+/// Returns a new accidental by adding up an int to the accidental in the equation.
+///
+/// - Parameters:
+///   - lhs: Left hand side of the equation.
+///   - rhs: Right hand side of the equation.
+/// - Returns: Returns the sum of two accidentals.
+public func + (lhs: Accidental, rhs: Int) -> Accidental {
+    return Accidental(integerLiteral: lhs.rawValue + rhs)
+}
+
+/// Returns a new accidental by substracting an int from the accidental in the equation.
+///
+/// - Parameters:
+///   - lhs: Left hand side of the equation.
+///   - rhs: Right hand side of the equation.
+/// - Returns: Returns the difference of two accidentals.
+public func - (lhs: Accidental, rhs: Int) -> Accidental {
+    return Accidental(integerLiteral: lhs.rawValue - rhs)
+}
+
+/// Multiples an accidental with a multiplier.
+///
+/// - Parameters:
+///   - lhs: Accidental you want to multiply.
+///   - rhs: Multiplier.
+/// - Returns: Returns a multiplied acceident.
+public func * (lhs: Accidental, rhs: Int) -> Accidental {
+    return Accidental(integerLiteral: lhs.rawValue * rhs)
+}
+
+/// Divides an accidental with a multiplier
+///
+/// - Parameters:
+///   - lhs: Accidental you want to divide.
+///   - rhs: Multiplier.
+/// - Returns: Returns a divided accidental.
+public func / (lhs: Accidental, rhs: Int) -> Accidental {
+    return Accidental(integerLiteral: lhs.rawValue / rhs)
+}
+
+/// Checks if the two accidental is identical in terms of their semitone values.
+///
+/// - Parameters:
+///   - lhs: Left hand side of the equation.
+///   - rhs: Right hand side of the equation.
+/// - Returns: Returns true if two accidentalals is identical.
+public func == (lhs: Accidental, rhs: Accidental) -> Bool {
+    return lhs.rawValue == rhs.rawValue
+}
+
+/// Checks if the two accidental is exactly identical.
+///
+/// - Parameters:
+///   - lhs: Left hand side of the equation.
+///   - rhs: Right hand side of the equation.
+/// - Returns: Returns true if two accidentalals is identical.
+public func === (lhs: Accidental, rhs: Accidental) -> Bool {
+    switch (lhs, rhs) {
+    case (.natural, .natural):
+        return true
+    case let (.sharps(a), .sharps(b)):
+        return a == b
+    case let (.flats(a), .flats(b)):
+        return a == b
+    default:
+        return false
+    }
+}
+
+
+// MARK: - Accidental Definitions
+
+/// Used for calculating values of the `Key` and `Pitch` objects.
 public enum Accidental: Codable, Equatable, Hashable {
     
     // Base definition of accidentals.
@@ -20,15 +114,19 @@ public enum Accidental: Codable, Equatable, Hashable {
     case sharps(amount: Int)
     
     
-    // Human friendly definition of accidentals.
+    /// Reduce the `Key` or `Pitch` value one semitone below
     public static let flat: Accidental = .flats(amount: 1)
+    /// Increases the `Key` or `Pitch` value one semitone above.
     public static let sharp: Accidental = .sharps(amount: 1)
+    /// Reduces the `Key` or `Pitch` value amount two semitones below.
     public static let doubleFlat: Accidental = .flats(amount: 2)
+    /// Increases the `Key` or `Pitch` value two semitones above.
     public static let doubleSharp: Accidental = .sharps(amount: 2)
     
-    /// A flag for `description` function that determines if it should use double sharp
-    /// and double flat symbols. It's useful to set it to `false` where fonts do not
-    /// support those symbols. Defaults to `true`.
+    /// A flag for the `description` function that determines if it should use double
+    /// sharp and double flat symbols. This is mostly useful for instances where fonts
+    /// do not support those types of symbols; in that case, set to `false`.
+    /// Defaults to `true`.
     public static var shouldUseDoubleFlatAndDoubleSharpNotation = true
 }
 
@@ -130,97 +228,5 @@ extension Accidental: CustomStringConvertible {
             default: return amount > 0 ? (0 ..< amount).map({ _ in Accidental.sharps(amount: 1).description }).joined() : ""
             }
         }
-    }
-}
-
-
-// MARK: - Accidental Operations
-
-/// Returns a new accidental by adding up two accidentals in the equation.
-///
-/// - Parameters:
-///   - lhs: Left hand side of the equation.
-///   - rhs: Right hand side of the equation.
-/// - Returns: Returns the sum of two accidentals.
-public func + (lhs: Accidental, rhs: Accidental) -> Accidental {
-    return Accidental(integerLiteral: lhs.rawValue + rhs.rawValue)
-}
-
-/// Returns a new accidental by substracting two accidentals in the equation.
-///
-/// - Parameters:
-///   - lhs: Left hand side of the equation.
-///   - rhs: Right hand side of the equation.
-/// - Returns: Returns the difference of two accidentals.
-public func - (lhs: Accidental, rhs: Accidental) -> Accidental {
-    return Accidental(integerLiteral: lhs.rawValue - rhs.rawValue)
-}
-
-/// Returns a new accidental by adding up an int to the accidental in the equation.
-///
-/// - Parameters:
-///   - lhs: Left hand side of the equation.
-///   - rhs: Right hand side of the equation.
-/// - Returns: Returns the sum of two accidentals.
-public func + (lhs: Accidental, rhs: Int) -> Accidental {
-    return Accidental(integerLiteral: lhs.rawValue + rhs)
-}
-
-/// Returns a new accidental by substracting an int from the accidental in the equation.
-///
-/// - Parameters:
-///   - lhs: Left hand side of the equation.
-///   - rhs: Right hand side of the equation.
-/// - Returns: Returns the difference of two accidentals.
-public func - (lhs: Accidental, rhs: Int) -> Accidental {
-    return Accidental(integerLiteral: lhs.rawValue - rhs)
-}
-
-/// Multiples an accidental with a multiplier.
-///
-/// - Parameters:
-///   - lhs: Accidental you want to multiply.
-///   - rhs: Multiplier.
-/// - Returns: Returns a multiplied acceident.
-public func * (lhs: Accidental, rhs: Int) -> Accidental {
-    return Accidental(integerLiteral: lhs.rawValue * rhs)
-}
-
-/// Divides an accidental with a multiplier
-///
-/// - Parameters:
-///   - lhs: Accidental you want to divide.
-///   - rhs: Multiplier.
-/// - Returns: Returns a divided accidental.
-public func / (lhs: Accidental, rhs: Int) -> Accidental {
-    return Accidental(integerLiteral: lhs.rawValue / rhs)
-}
-
-/// Checks if the two accidental is identical in terms of their semitone values.
-///
-/// - Parameters:
-///   - lhs: Left hand side of the equation.
-///   - rhs: Right hand side of the equation.
-/// - Returns: Returns true if two accidentalals is identical.
-public func == (lhs: Accidental, rhs: Accidental) -> Bool {
-    return lhs.rawValue == rhs.rawValue
-}
-
-/// Checks if the two accidental is exactly identical.
-///
-/// - Parameters:
-///   - lhs: Left hand side of the equation.
-///   - rhs: Right hand side of the equation.
-/// - Returns: Returns true if two accidentalals is identical.
-public func === (lhs: Accidental, rhs: Accidental) -> Bool {
-    switch (lhs, rhs) {
-    case (.natural, .natural):
-        return true
-    case let (.sharps(a), .sharps(b)):
-        return a == b
-    case let (.flats(a), .flats(b)):
-        return a == b
-    default:
-        return false
     }
 }

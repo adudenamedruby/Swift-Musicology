@@ -1,5 +1,5 @@
 //
-//  Chord Progression.swift
+//  ChordProgression.swift
 //  Swift Musicology
 //
 //  Created by roux g. buciu on 2018-11-25.
@@ -9,11 +9,19 @@
 import Foundation
 
 /// A struct for storing custom progressions.
-public struct CustomChordProgression: Codable {
+public struct CustomChordProgression: Codable, CustomStringConvertible {
     /// Name of the progression.
     public var name: String
     /// Chord progression with `ChordProgresion.custom` type.
     public var progression: ChordProgression
+    
+    
+    // MARK: CustomStringConvertible
+
+    public var description: String {
+      return name
+    }
+
 }
 
 /// A node of chord progression in intervals.
@@ -75,123 +83,75 @@ public enum ChordProgressionNode: Int, CustomStringConvertible, Codable {
 /// Chord progression enum that you can create hard-coded and custom progressions.
 public enum ChordProgression: CustomStringConvertible, Codable {
     /// All nodes from first to seventh.
-    case allNodes
+    public static let allNodes = ChordProgression(nodes: [.i, .ii, .iii, .iv, .v, .vi, .vii])
     /// I - V - VI - IV progression.
-    case i_v_vi_iv
+    public static let i_v_vi_iv = ChordProgression(nodes: [.i, .v, .vi, .iv])
     /// VI - V - IV - V progression.
-    case vi_v_iv_v
+    public static let vi_v_iv_v = ChordProgression(nodes: [.vi, .v, .iv, .v])
     /// I - VI - IV - V progression.
-    case i_vi_iv_v
+    public static let i_vi_iv_v = ChordProgression(nodes: [.i, .vi, .iv, .v])
     /// I - IV - VI - V progression.
-    case i_iv_vi_v
+    public static let i_iv_vi_v = ChordProgression(nodes: [.i, .iv, .vi, .v])
     /// I - V - IV - V progression.
-    case i_v_iv_v
+    public static let i_v_iv_v = ChordProgression(nodes: [.i, .v, .iv, .v])
     /// VI - II - V - I progression.
-    case vi_ii_v_i
+    public static let vi_ii_v_i = ChordProgression(nodes: [.vi, .ii, .v, .i])
     /// I - VI - II - V progression.
-    case i_vi_ii_v
+    public static let i_vi_ii_v = ChordProgression(nodes: [.i, .vi, .ii, .v])
     /// I - IV - II - V progression.
-    case i_iv_ii_v
+    public static let i_iv_ii_v = ChordProgression(nodes: [.i, .iv, .ii, .v])
     /// VI - IV - I - V progression.
-    case vi_iv_i_v
+    public static let vi_iv_i_v = ChordProgression(nodes: [.vi, .iv, .i, .v])
     /// I - VI - III - VII progression.
-    case i_vi_iii_vii
+    public static let i_vi_iii_vii = ChordProgression(nodes: [.i, .vi, .iii, .vii])
     /// VI - V - IV - III progression.
-    case vi_v_iv_iii
+    public static let vi_v_iv_iii = ChordProgression(nodes: [.vi, .v, .iv, .iii])
     /// I - V - VI - III - IV - I - IV - V progression.
-    case i_v_vi_iii_iv_i_iv_v
+    public static let i_v_vi_iii_iv_i_iv_v = ChordProgression(nodes: [.i, .v, .vi, .iii, .iv, .i, .iv, .v])
     /// IV - I - V - IV progression.
-    case iv_i_v_iv
+    public static let iv_i_v_iv = ChordProgression(nodes: [.iv, .i, .v, .iv])
     /// I - II - VI - IV progression.
-    case i_ii_vi_iv
+    public static let i_ii_vi_iv = ChordProgression(nodes: [.i, .ii, .vi, .iv])
     /// I - III - VI - IV progression.
-    case i_iii_vi_iv
+    public static let i_iii_vi_iv = ChordProgression(nodes: [.i, .iii, .vi, .iv])
     /// I - V - II - IV progression.
-    case i_v_ii_iv
+    public static let i_v_ii_iv = ChordProgression(nodes: [.i, .v, .ii, .iv])
     /// II - IV - I - V progression.
-    case ii_iv_i_v﻿
-    /// Custom progression with any node sequence.
-    case custom([ChordProgressionNode])
+    public static let ii_iv_i_v = ChordProgression(nodes: [.ii, .iv, .i, .v])
+
+    public let nodes: [ChordProgressionNode]
     
     /// Initilizes the chord progression with its nodes.
     ///
     /// - Parameter nodes: Nodes of the chord progression.
     public init(nodes: [ChordProgressionNode]) {
-        if let progression = ChordProgression.all.filter({ $0.nodes == nodes }).first {
-            self = progression
-        } else {
-            self = .custom(nodes)
-        }
+      self.nodes = nodes
     }
-    
-    /// Returns all nodes of the progression.
-    public var nodes: [ChordProgressionNode] {
-        switch self {
-        case .allNodes:
-            return [.i, .ii, .iii, .iv, .v, .vi, .vii]
-        case .i_v_vi_iv:
-            return [.i, .v, .vi, .iv]
-        case .vi_v_iv_v:
-            return [.vi, .v, .iv, .v]
-        case .i_vi_iv_v:
-            return [.i, .vi, .iv, .v]
-        case .i_iv_vi_v:
-            return [.i, .iv, .vi, .v]
-        case .i_v_iv_v:
-            return [.i, .v, .iv, .v]
-        case .vi_ii_v_i:
-            return [.v, .ii, .v, .i]
-        case .i_vi_ii_v:
-            return [.i, .vi, .ii, .v]
-        case .i_iv_ii_v:
-            return [.i, .iv, .ii, .v]
-        case .vi_iv_i_v:
-            return [.vi, .iv, .i, .v]
-        case .i_vi_iii_vii:
-            return [.i, .vi, .iii, .vii]
-        case .vi_v_iv_iii:
-            return [.vi, .v, .vi, .iii]
-        case .i_v_vi_iii_iv_i_iv_v:
-            return [.i, .v, .vi, .iii, .iv, .i, .iv, .v]
-        case .iv_i_v_iv:
-            return [.iv, .i, .v, .iv]
-        case .i_ii_vi_iv:
-            return [.i, .ii, .vi, .iv]
-        case .i_iii_vi_iv:
-            return [.i, .iii, .vi, .iv]
-        case .i_v_ii_iv:
-            return [.i, .v, .ii, .iv]
-        case .ii_iv_i_v﻿:
-            return [.ii, .iv, .i, .v]
-        case let .custom(nodes):
-            return nodes
-        }
-    }
-    
+
     /// All hard-coded chord progressions.
     public static var all: [ChordProgression] {
-        return [
-            .allNodes,
-            .i_v_vi_iv,
-            .vi_v_iv_v,
-            .i_vi_iv_v,
-            .i_iv_vi_v,
-            .i_v_iv_v,
-            .vi_ii_v_i,
-            .i_vi_ii_v,
-            .i_iv_ii_v,
-            .vi_iv_i_v,
-            .i_vi_iii_vii,
-            .vi_v_iv_iii,
-            .i_v_vi_iii_iv_i_iv_v,
-            .iv_i_v_iv,
-            .i_ii_vi_iv,
-            .i_iii_vi_iv,
-            .i_v_ii_iv,
-            .ii_iv_i_v﻿,
-        ]
+      return [
+        .allNodes,
+        .i_v_vi_iv,
+        .vi_v_iv_v,
+        .i_vi_iv_v,
+        .i_iv_vi_v,
+        .i_v_iv_v,
+        .vi_ii_v_i,
+        .i_vi_ii_v,
+        .i_iv_ii_v,
+        .vi_iv_i_v,
+        .i_vi_iii_vii,
+        .vi_v_iv_iii,
+        .i_v_vi_iii_iv_i_iv_v,
+        .iv_i_v_iv,
+        .i_ii_vi_iv,
+        .i_iii_vi_iv,
+        .i_v_ii_iv,
+        .ii_iv_i_v,
+      ]
     }
-    
+
     /// Generates chord progression for a `Scale` with `Scale.HarmonicField` and optionally inverted chords.
     ///
     /// - Parameters:
@@ -200,52 +160,58 @@ public enum ChordProgression: CustomStringConvertible, Codable {
     ///   - inversion: Inversion of the chords going to be generated.
     /// - Returns: Returns all possible chords for a scale. Returns nil if the chord is not generated for particular `ChordProgressionNode`.
     public func chords(for scale: Scale, harmonicField: Scale.HarmonicField, inversion: Int = 0) -> [Chord?] {
-        let indices = nodes.map({ $0.rawValue })
-        let harmonics = scale.harmonicField(for: harmonicField, inversion: inversion)
-        var chords = [Chord?]()
-        for index in indices {
-            if index < harmonics.count {
-                chords.append(harmonics[index])
-            }
+      let indices = nodes.map({ $0.rawValue })
+      let harmonics = scale.harmonicField(for: harmonicField, inversion: inversion)
+      var chords = [Chord?]()
+      for index in indices {
+        if index < harmonics.count {
+          chords.append(harmonics[index])
         }
-        return chords
+      }
+      return chords
     }
-    
+
     // MARK: CustomStringConvertible
-    
+
     /// Returns the chord progression name.
     public var description: String {
-        if case .allNodes = self {
-            return "All"
-        }
-        return nodes.map({ "\($0)" }).joined(separator: " - ")
+      if self == ChordProgression.allNodes {
+        return "All"
+      }
+      return nodes.map({ "\($0)" }).joined(separator: " - ")
     }
-    
+
     // MARK: Codable
-    
+
     /// Codable protocol `CodingKey`s
     ///
     /// - nodes: Coding key for the nodes.
     private enum CodingKeys: String, CodingKey {
-        case nodes
+      case nodes
     }
-    
+
     /// Initilizes chord progression with a `Decoder`.
     ///
     /// - Parameter decoder: The decoder.
     /// - Throws: Throws error if can not decodes.
     public init(from decoder: Decoder) throws {
-        let values = try decoder.container(keyedBy: CodingKeys.self)
-        let nodes = try values.decode([ChordProgressionNode].self, forKey: .nodes)
-        self = ChordProgression(nodes: nodes)
+      let values = try decoder.container(keyedBy: CodingKeys.self)
+      let nodes = try values.decode([ChordProgressionNode].self, forKey: .nodes)
+      self = ChordProgression(nodes: nodes)
     }
-    
+
     /// Encodes the chord progression.
     ///
     /// - Parameter encoder: The encoder.
     /// - Throws: Throws error if can not encodes.
     public func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(nodes, forKey: .nodes)
+      var container = encoder.container(keyedBy: CodingKeys.self)
+      try container.encode(nodes, forKey: .nodes)
+    }
+
+    // MARK: Equatable
+
+    public static func == (lhs: ChordProgression, rhs: ChordProgression) -> Bool {
+      return lhs.nodes == rhs.nodes
     }
 }

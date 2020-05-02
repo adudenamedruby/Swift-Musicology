@@ -44,3 +44,9 @@ public struct TimeSignature: Codable {
     }
 }
 
+extension TimeSignature: CustomStringConvertible {
+    
+    public var description: String {
+      return "\(beats)/\(Int(noteValue.rawValue))"
+    }
+}

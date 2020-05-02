@@ -8,7 +8,32 @@
 
 import Foundation
 
-/// Defines the interval between `Pitch`es in semitones.
+// MARK: - Interval Operations
+
+/// Checks the equality of two `Interval`s in terms of their semitones.
+///
+/// - Parameters:
+///   - lhs: Left hand side of the equation.
+///   - rhs: Right hand side of the equation.
+/// - Returns: Returns true if two `Interval`s are equal.
+public func == (lhs: Interval, rhs: Interval) -> Bool {
+    return lhs.semitones == rhs.semitones
+}
+
+/// Checks the equality of two `Interval`s in terms of their quality, degree and semitones.
+///
+/// - Parameters:
+///   - lhs: Left hand side of the equation.
+///   - rhs: Right hand side of the equation.
+/// - Returns: Returns true if two `Interval`s are equal.
+public func === (lhs: Interval, rhs: Interval) -> Bool {
+    return lhs.quality == rhs.quality && rhs.degree == rhs.degree && lhs.semitones == rhs.semitones
+}
+
+
+// MARK: - Interval Definition
+
+/// Defines the interval between `Pitch` objects in semitones.
 public struct Interval: Codable, Equatable {
     
     /// Quality type of the interval.
@@ -212,27 +237,4 @@ extension Interval: CustomStringConvertible {
         
         return "\(quality) \(formattedDegree)"
     }
-}
-
-
-// MARK: - Interval Operations
-
-/// Checks the equality of two `Interval`s in terms of their semitones.
-///
-/// - Parameters:
-///   - lhs: Left hand side of the equation.
-///   - rhs: Right hand side of the equation.
-/// - Returns: Returns true if two `Interval`s are equal.
-public func == (lhs: Interval, rhs: Interval) -> Bool {
-    return lhs.semitones == rhs.semitones
-}
-
-/// Checks the equality of two `Interval`s in terms of their quality, degree and semitones.
-///
-/// - Parameters:
-///   - lhs: Left hand side of the equation.
-///   - rhs: Right hand side of the equation.
-/// - Returns: Returns true if two `Interval`s are equal.
-public func === (lhs: Interval, rhs: Interval) -> Bool {
-    return lhs.quality == rhs.quality && rhs.degree == rhs.degree && lhs.semitones == rhs.semitones
 }

@@ -193,8 +193,8 @@ public func - (lhs: Pitch, rhs: Pitch) -> Interval {
     let bottom = min(lhs, rhs)
     let diff = top.rawValue - bottom.rawValue
     
-    let bottomKeyIndex = Key.KeyType.all.index(of: bottom.key.type) ?? 0
-    let topKeyIndex = Key.KeyType.all.index(of: top.key.type) ?? 0
+    let bottomKeyIndex = Key.KeyType.all.firstIndex(of: bottom.key.type) ?? 0
+    let topKeyIndex = Key.KeyType.all.firstIndex(of: top.key.type) ?? 0
     let degree = abs(topKeyIndex - bottomKeyIndex) + 1
     let isMajor = (degree == 2 || degree == 3 || degree == 6 || degree == 7)
     
@@ -268,7 +268,7 @@ public func === (left: Pitch, right: Pitch) -> Bool {
     return left.key == right.key && left.octave == right.octave
 }
 
-/// Compares two `Pitch`es in terms of their semitones.
+/// Compares two `Pitch` objects in terms of their semitones.
 ///
 /// - Parameters:
 ///   - lhs: Left hand side of the equation.

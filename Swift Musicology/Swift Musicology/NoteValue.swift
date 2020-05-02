@@ -13,7 +13,8 @@ import Foundation
 
 /// Defines the different types of note values that are generally available in music notation,
 /// from whole notes to sixtyfourth notes.
-public enum NoteValueType: Double, Codable {
+public enum NoteValueType: Double, Codable, CaseIterable {
+    case doubleWhole = 0.5
     case whole = 1
     case half = 2
     case quarter = 4
@@ -39,7 +40,20 @@ public enum NoteModifier: Double, Codable {
 }
 
 
-// MARK: - NoteValue
+// MARK: - NoteValue Operations
+
+/// Calculates how many notes of a single `NoteValueType` is equivalent to a given `NoteValue`.
+///
+/// - Parameters:
+///   - noteValue: The note value to be measured.
+///   - noteValueType: The note value type to measure the length of the note value.
+/// - Returns: Returns how many notes of a single `NoteValueType` is equivalent to a given `NoteValue`.
+public func / (noteValue: NoteValue, noteValueType: NoteValueType) -> Double {
+    return noteValue.modifier.rawValue * noteValueType.rawValue / noteValue.type.rawValue
+}
+
+
+// MARK: - NoteValue Definition
 
 /// Used to denfine the duration of a note.
 public struct NoteValue: Codable {
@@ -59,17 +73,4 @@ public struct NoteValue: Codable {
         self.type = type
         self.modifier = modifier
     }
-}
-
-
-// MARK: - NoteValue Operations
-
-/// Calculates how many notes of a single `NoteValueType` is equivalent to a given `NoteValue`.
-///
-/// - Parameters:
-///   - noteValue: The note value to be measured.
-///   - noteValueType: The note value type to measure the length of the note value.
-/// - Returns: Returns how many notes of a single `NoteValueType` is equivalent to a given `NoteValue`.
-public func / (noteValue: NoteValue, noteValueType: NoteValueType) -> Double {
-    return noteValue.modifier.rawValue * noteValueType.rawValue / noteValue.type.rawValue
 }
